@@ -1,0 +1,101 @@
+
+// LARGE
+
+@include MediaL() {
+
+    #skills {
+        .skillsGrid {
+            width: 80%;
+        }
+    }
+
+    #projects {
+        .projectsGrid {
+            grid-template-areas: 
+            "project1 project1 project1"
+            "project4 project2 project3 ";
+
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+// MEDIUM LARGE
+
+@include MediaMl() {
+
+    #projects {
+        .projectsGrid {
+            grid-template-areas: 
+            "project1 project4"
+            "project2 project3";
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+// MEDIUM
+
+@include MediaMd() {
+
+    body {
+        .headersStyle {
+            margin-left: 0;
+        }
+    }
+
+    #landing {
+        padding-bottom: 15rem;
+
+        .headingsDiv {
+            margin: 20vh 0 0 0;
+        }
+    }
+
+    #about,
+    section {
+        text-align: center;
+    }
+
+    #skills {
+        .skillsGrid {
+            grid-template-areas: 
+            "box1"
+            "box2"
+            "box3"
+            "box4";
+            grid-template-columns: 1fr;
+        }
+    }
+
+    #projects {
+
+        .projectsGrid {
+            grid-template-areas: 
+            "project1"
+            "project2"
+            "project3"
+            "project4";
+
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// SMALL
+
+@include MediaSm() {
+    html {
+        font-size: 12px;
+    }
+
+    #landing {
+        padding-bottom: 7.5rem;
+    }
+
+    header {
+        .menu-btn {
+            right: 20px;
+        }
+    }
+}

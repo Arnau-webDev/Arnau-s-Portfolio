@@ -1,0 +1,71 @@
+
+// VARIABLES
+
+$primary-color: #336b87;
+$secondary-color: #90afc5;
+
+$html-primary-color: #f06529;
+$html-secondary-color: #e34c26;
+
+$CSS-primary-color: #264de4;
+$CSS-secondary-color: #2965f1;
+
+$JS-primary-color: #f0db4f;
+
+$Vue-primary-color: #41B883;
+
+$primary-font: 'Caveat', cursive;
+$secondary-font: 'Dancing Script', cursive;
+
+// MIXINS
+
+@mixin transition() {
+    transition: all .5s ease;
+}
+
+@mixin backgroundSetUp() {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+// MEDIA QUERIES
+
+// XL SCREENS
+
+@mixin MediaXl() {
+    @media only screen and (min-width: 1400px) {
+        @content;
+    }
+}
+
+// LARGE SCREENS
+
+@mixin MediaL() {
+    @media only screen and (max-width: 1320px) {
+        @content;
+    }
+}
+
+@mixin MediaMl() {
+    @media only screen and (max-width: 1170px) {
+        @content;
+    }
+}
+
+// MEDIUM SCREENS
+
+@mixin MediaMd() {
+    @media only screen and (max-width: 901px) {
+        @content;
+    }
+}
+
+// SMALL SCREEN
+
+@mixin MediaSm() {
+    @media only screen and (max-width: 500px) {
+        @content;
+    }
+}

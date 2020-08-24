@@ -1,0 +1,113 @@
+
+// Menu btn
+
+.menu-btn {
+    position: absolute;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include transition;
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background: #fff;
+        @include transition;
+    }
+
+    //Rotate into X 
+
+    &.close {
+        transform: rotate(180deg);
+
+        .btn-line {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            &:nth-child(2) {
+                opacity: 0;
+            }
+
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);                
+            }
+        }
+    }
+}
+
+// Menu Overlay
+
+.menu {
+    // position: fixed;
+    // top: 0;
+    width: 100%;
+    opacity: 0.9;
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+
+    &-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        // float: left;
+        // width: 40%;
+        height: 100vh;
+        overflow: hidden;
+
+        margin: 0;
+        padding: 0;
+        background: darken($primary-color, 5);
+        list-style: none;
+        transform: translate3d(0, -100%, 0);
+        @include transition;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }
+
+        .nav-item {
+            transform: translate3d(600px, 0, 0);
+            @include transition;
+    
+            &.show {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+    }
+
+    .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        padding: 1rem 0;
+        font-weight: 300;
+        color: #fff;
+        text-decoration: none;
+        @include transition;
+
+        &:hover {
+            color: lighten($secondary-color, 5);
+            transform: scale(1.3);
+        }
+
+        &.current {
+            color:lighten($primary-color, 5);
+        }
+    }
+}
+
+// Delay each nav item slide
+
+@for $x from 1 through 5 {
+    .nav-item:nth-child(#{$x}) {
+        transition-delay: $x * 0.2s;
+    }
+}
